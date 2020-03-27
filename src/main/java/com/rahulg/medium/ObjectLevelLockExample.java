@@ -1,7 +1,5 @@
 package com.rahulg.medium;
 
-import sun.lwawt.macosx.CSystemTray;
-
 public class ObjectLevelLockExample {
     private final Object lock = new Object(); //declaring a lock
 

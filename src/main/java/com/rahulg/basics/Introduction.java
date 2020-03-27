@@ -1,7 +1,7 @@
 package com.rahulg.basics;
 
-import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
-import sun.lwawt.macosx.CSystemTray;
+//import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
+//import sun.lwawt.macosx.CSystemTray;
 
 public class Introduction {
 
