@@ -1,6 +1,6 @@
 package com.rahulg.basics;
 
-import javax.rmi.CORBA.Util;
+//import javax.rmi.CORBA.Util;
 
 public class MyThreadExample extends  Thread{
 
@@ -11,6 +11,6 @@ public class MyThreadExample extends  Thread{
     @Override
     public void run() {
         System.out.println("Executing MyThreadExample ...");
-        Utils.printThreadDetails(Thread.currentThread(), "MyThreadExample");
+        //Utils.printThreadDetails(Thread.currentThread(), "MyThreadExample");
     }
 }
