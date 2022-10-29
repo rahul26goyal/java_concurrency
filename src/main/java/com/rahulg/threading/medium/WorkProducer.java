@@ -1,4 +1,4 @@
-package com.rahulg.medium;
+package com.rahulg.threading.medium;
 
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;

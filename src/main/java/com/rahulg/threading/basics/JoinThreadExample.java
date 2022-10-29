@@ -1,4 +1,4 @@
-package com.rahulg.basics;
+package com.rahulg.threading.basics;
 
 import java.util.Random;
 

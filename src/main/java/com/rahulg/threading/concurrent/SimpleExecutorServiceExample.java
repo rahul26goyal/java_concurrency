@@ -1,4 +1,4 @@
-package com.rahulg.concurrent;
+package com.rahulg.threading.concurrent;
 
 import java.util.Random;
 import java.util.concurrent.*;

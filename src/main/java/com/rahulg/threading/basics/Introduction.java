@@ -1,4 +1,4 @@
-package com.rahulg.basics;
+package com.rahulg.threading.basics;
 
 //import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
 //import sun.lwawt.macosx.CSystemTray;

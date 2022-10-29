@@ -1,4 +1,4 @@
-package com.rahulg.medium;
+package com.rahulg.threading.medium;
 
 public class ThreadLocalStorageExample implements  Runnable{
     //providing each thread with a storage of its own.

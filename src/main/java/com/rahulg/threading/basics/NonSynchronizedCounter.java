@@ -1,4 +1,4 @@
-package com.rahulg.basics;
+package com.rahulg.threading.basics;
 
 public class NonSynchronizedCounter implements Runnable {
     private static int count = 2;

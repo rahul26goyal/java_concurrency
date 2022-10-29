@@ -1,6 +1,4 @@
-package com.rahulg.concurrent;
-
-import com.rahulg.medium.ThreadLocalStorageExample;
+package com.rahulg.threading.concurrent;
 
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;

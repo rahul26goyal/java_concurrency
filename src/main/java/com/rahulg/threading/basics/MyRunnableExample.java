@@ -1,4 +1,4 @@
-package com.rahulg.basics;
+package com.rahulg.threading.basics;
 
 public class MyRunnableExample implements Runnable {
     public void run() {

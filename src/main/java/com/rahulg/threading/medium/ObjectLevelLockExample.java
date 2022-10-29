@@ -1,4 +1,4 @@
-package com.rahulg.medium;
+package com.rahulg.threading.medium;
 
 public class ObjectLevelLockExample {
     private final Object lock = new Object(); //declaring a lock

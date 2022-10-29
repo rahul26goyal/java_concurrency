@@ -1,4 +1,4 @@
-package com.rahulg.basics;
+package com.rahulg.threading.basics;
 
 public class SynchronizedCountExample implements Runnable {
     private static int count = 0;

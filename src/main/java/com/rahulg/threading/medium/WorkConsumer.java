@@ -1,4 +1,4 @@
-package com.rahulg.medium;
+package com.rahulg.threading.medium;
 
 public class WorkConsumer implements Runnable{
     public void run() {

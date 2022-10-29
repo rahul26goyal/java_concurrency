@@ -1,4 +1,4 @@
-package com.rahulg.basics;
+package com.rahulg.threading.basics;
 
 public class InterreptableThread implements Runnable {
     public void run() {
