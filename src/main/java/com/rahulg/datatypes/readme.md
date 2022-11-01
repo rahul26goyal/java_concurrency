@@ -47,3 +47,24 @@ Before we begin let's note that
 -  an interface is an abstract type that contains a collection of methods and constant variables. It is one of the core concepts in Java and is used to achieve abstraction, polymorphism and multiple inheritances.
 
 
+# Java Enums [Link](https://www.baeldung.com/a-guide-to-java-enums)
+-  It denotes a special type of class that always extends the java.lang.Enum class.
+- ENUMS are fixed list of constant with type associated. We can not create new enums at runtime.
+- ENUMS can have  variables and methods associated which helps to add property to enum objects. 
+- ENUMS can be used to define  singletone classes. 
+- ENUMS are used to create Stragery  pattern classes as well.
+- the enum type provides a valueOf() method that takes a String as an argument, and returns the corresponding enum object:
+
+
+
+# Java `final` keyword
+- Classes marked as final can’t be extended. If we look at the code of Java core libraries, we’ll find many final classes there. One example is the String class.
+- Methods marked as final cannot be overridden. When we design a class and feel that a method shouldn’t be overridden, we can make this method final. We can also find many final methods in Java core libraries.
+- Variables marked as final can't be reassigned. Once a final variable is initialized, it can’t be altered.
+- If we have a final reference variable, we can’t reassign it either. But this doesn’t mean that the object it refers to is immutable. We can change the properties of this object freely.
+- A final argument can’t be changed inside a method:
+- Final fields can be either constants or write-once fields. Note that any final field must be initialized before the constructor completes.
+- 
+
+
+

@@ -1,7 +1,11 @@
 package com.rahulg.testing;
 
-import org.junit.Test;
-import static  org.junit.Assert.assertEquals;
+//import org.junit.Test;
+//import static  org.junit.Assert.assertEquals;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 public class CalculatorTest {
 
@@ -19,7 +23,7 @@ public class CalculatorTest {
         assertEquals(result, 1);
     }
 
-    @Test(expected = Exception.class)
+    //@Test(expected = Exception.class)
     public void testSubtractException() throws Exception {
         int result = calc.sub(0,3);
     }
