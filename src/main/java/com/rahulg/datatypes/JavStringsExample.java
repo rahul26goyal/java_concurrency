@@ -142,4 +142,10 @@ class StringEncodingTest {
         System.out.println("decodedString :" + decodedString);
         System.out.println("decodeBytes :" + decodeBytes.length);
     }
+
+    @Test
+    public void toStringtest() {
+        System.out.println("String  = " + getClass().getName()+"@"+Integer.toHexString(hashCode()));
+        //return getClass().getName()+"@"+Integer.toHexString(hashCode());
+    }
 }
