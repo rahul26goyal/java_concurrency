@@ -23,21 +23,18 @@ public class SimpleExecutorServiceExample {
     public static  void executeSimpleExecutorServiceExample() throws ExecutionException, InterruptedException {
         System.out.println("Startring with executeSimpleExecutorServiceExample");
         ExecutorService executorService = Executors.newFixedThreadPool(5);
-        Future<Integer> [] futures = new Future[5];
+        Future<Integer> [] futures = new Future[10];
 
-        for(int i = 0; i<5; i++) {
+        for(int i = 0; i<10; i++) {
             futures[i] = executorService.submit(new CallableThread());
             System.out.println("Created future ID-"+ i);
         }
-        for(int i = 0; i<5; i++) {
+        for(int i = 0; i<10; i++) {
             Integer returnVal = futures[i].get(); //blocking operation for this thread.
             System.out.println("For Future-ID:" + i + " returnval:" + returnVal);
         }
         System.out.println("DOnw with executeSimpleExecutorServiceExample");
         executorService.shutdown();
     }
-
-
-
 
 }

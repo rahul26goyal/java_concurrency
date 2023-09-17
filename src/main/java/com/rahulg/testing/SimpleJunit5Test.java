@@ -1,6 +1,7 @@
 package com.rahulg.testing;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
+
 public class SimpleJunit5Test {
 
     @Test

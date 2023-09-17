@@ -22,3 +22,4 @@
 
 - A computer has a processor, memory, disk, soundcard etc. So, define each object separatey and use composition to group it.
 
+
