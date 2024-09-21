@@ -13,8 +13,8 @@ public class Introduction {
         //executeThreadInterrupt();
         //executeJoinThread();
         //executeNonSynchronizedThreds();
-        //executeSynchronizedThreds();
-        executeSynchronizedDataThreds();
+        executeSynchronizedThreds();
+        //executeSynchronizedDataThreds();
 
     }
 

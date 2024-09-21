@@ -1,4 +1,4 @@
-package com.rahulg.threading.concurrent;
+package com.rahulg.threading.executor;
 
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;

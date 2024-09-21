@@ -14,9 +14,10 @@ public class SynchronizedDataClass {
         System.out.println(tag + ": Started");
         while(this.syncValue < 3) {
             synchronized (SynchronizedDataClass.class) {
-                System.out.println(tag + "This Block is Synchronized...avalable every 3 seconds.");
+                System.out.println(tag + "This Block is Synchronized at class level...avalable every 3 seconds.");
                 try {
-                    Thread.sleep(1000);
+                    // all the threads may be trying to access a common resource and should wait for their turn..
+                    Thread.sleep(1000); // accessing common resource.
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

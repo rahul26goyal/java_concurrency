@@ -1,5 +1,7 @@
 package com.rahulg.threading.basics;
 
+//import com.rahulg.threading.executors.ExampleForExecutor;
+
 public class Utils {
 
     public static  void printThreadDetails(Thread t, String name) {
@@ -11,5 +13,9 @@ public class Utils {
         System.out.println("Printing the details of Thread: " + name.toUpperCase());
         System.out.println("tThreadId: "+tThreadId+"\ntThreadId: "+tThreadName+"\ntThreadPriority:"+tThreadPriority
                 + "\ncurrState: "+currState+"\ntThreadGroupName="+tThreadGroupName);
+    }
+
+    public static void test() {
+       // ExampleForExecutor
     }
 }

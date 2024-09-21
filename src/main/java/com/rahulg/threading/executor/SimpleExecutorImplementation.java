@@ -1,4 +1,4 @@
-package com.rahulg.threading.concurrent;
+package com.rahulg.threading.executor;
 
 import java.util.concurrent.Executor;
 
@@ -8,6 +8,11 @@ public class SimpleExecutorImplementation implements Executor {
     public void execute(Runnable r){
         System.out.println("Executing the given runnable..");
         new Thread(r, "some-work").start();
+    }
+
+    // or a synchronous execution
+    public void execute2(Runnable task) {
+        task.run();
     }
 
 

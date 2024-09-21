@@ -51,6 +51,10 @@ public class TestSimpleRunnable {
             }
         };
 
+        Runnable task3 = () -> {
+          System.out.println("Another task..");
+        };
+
         // task2.run();
         Thread t1 = new Thread(task2, "Child-thread-1");
         t1.start();

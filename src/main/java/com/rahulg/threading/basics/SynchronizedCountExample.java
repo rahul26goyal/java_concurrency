@@ -7,11 +7,11 @@ public class SynchronizedCountExample implements Runnable {
         String threadName = Thread.currentThread().getName();
         String tag = "[Thread: " + threadName + "]";
         System.out.println(tag + ": Started");
-        while (count < 7) {
-            synchronized (SynchronizedCountExample.class) {
+        synchronized (SynchronizedCountExample.class) { // class level sync lock..
+             while (count < 7) {
                 System.out.println(tag + "This Block is Synchronized...avalable every 3 seconds.");
                 try {
-                    Thread.sleep(3000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

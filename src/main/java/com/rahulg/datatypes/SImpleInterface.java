@@ -1,6 +1,25 @@
 package com.rahulg.datatypes;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 import java.util.Comparator;
+
+
+public class SImpleInterface {
+
+    @Test
+    public void test_main(){
+        Circle c1 = new Circle(1, "red");
+        System.out.println(c1.printColor());
+        System.out.println(c1.getSides());
+        System.out.println(c1.getType());
+    }
+
+
+}
+
+
 
 interface ShapeInterface { // default scoped interface
 
@@ -66,15 +85,4 @@ class ShareComarator implements Comparator<Shape> {
         }
         return 0;
     }
-}
-
-public class SImpleInterface {
-
-    public static void main(String ...args) {
-        Circle c1 = new Circle(1, "red");
-        System.out.println(c1.printColor());
-        System.out.println(c1.getSides());
-        System.out.println(c1.getType());
-    }
-
 }
