@@ -10,13 +10,13 @@ public class ThreadPoolExecutorExample {
     public static void executeThreadPoolExecutorExample() {
         System.out.println("Starting Execution of executeThreadPoolExecutorExample");
         BlockingQueue<Runnable> waitingThreadQueue = new LinkedBlockingQueue<Runnable>(6);
-        ThreadFactory factory = new SomeThreadFactory();
+        ThreadFactory factory = new SimpleThreadFactory();
         RejectedExecutionHandler rejectionHandler = new ThreadRejectionHandler();
         ThreadPoolExecutor executor = new ThreadPoolExecutor(3, 6, 1, TimeUnit.SECONDS, waitingThreadQueue,
                factory, rejectionHandler);
         System.out.println("Creating Runnable..and executing..");
         for(int i = 0; i < 20; i++) {
-            executor.execute(new WorkerThread(i));
+            executor.execute(new SimpleWorkRunnable(i));
             System.out.println("Runnable ID created-" + i);
         }
         System.out.println("..shutting down the executor.");
@@ -25,10 +25,10 @@ public class ThreadPoolExecutorExample {
     }
 
     //worker thread
-    public static  class WorkerThread implements Runnable {
+    public static  class SimpleWorkRunnable implements Runnable {
         private final int taskId;
 
-        public  WorkerThread(int id) {
+        public SimpleWorkRunnable(int id) {
             this.taskId = id;
         }
 
@@ -50,7 +50,7 @@ public class ThreadPoolExecutorExample {
 
     //A FACTORY CLASS TO CREATE Threads given a runnable object.
     //new WorkerThreadFactory().newThread(Runnable r)
-    public static class SomeThreadFactory implements ThreadFactory {
+    public static class SimpleThreadFactory implements ThreadFactory {
         public Thread newThread(Runnable r) {
             String tag = "[Thread: " + Thread.currentThread().getName() + "]";
             int threadCount = counter.getAndIncrement();
@@ -62,9 +62,9 @@ public class ThreadPoolExecutorExample {
     //to handle rejection of a runnable object by ThreadPoolExecutor.
     public static  class ThreadRejectionHandler implements RejectedExecutionHandler {
         public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
-            if(r instanceof WorkerThread) {
-                WorkerThread th = (WorkerThread) r;
-                System.out.println("Task Id rejected:" + th.getTaskId());
+            if(r instanceof SimpleWorkRunnable) {
+                SimpleWorkRunnable runnable = (SimpleWorkRunnable) r;
+                System.out.println("Task Id rejected:" + runnable.getTaskId());
             }
         }
     }

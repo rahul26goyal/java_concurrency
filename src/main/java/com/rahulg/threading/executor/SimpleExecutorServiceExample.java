@@ -6,7 +6,7 @@ import java.util.concurrent.*;
 public class SimpleExecutorServiceExample {
 
    //Define a callable class which is the Unit of work for thread.
-   static class CallableThread implements Callable<Integer> {
+   static class CallableTask implements Callable<Integer> {
         private final Random random = new Random(System.currentTimeMillis());
 
         //a callable thread can return Integer which is accepted in a future Object.
@@ -26,7 +26,7 @@ public class SimpleExecutorServiceExample {
         Future<Integer> [] futures = new Future[10];
 
         for(int i = 0; i<10; i++) {
-            futures[i] = executorService.submit(new CallableThread());
+            futures[i] = executorService.submit(new CallableTask());
             System.out.println("Created future ID-"+ i);
         }
         for(int i = 0; i<10; i++) {

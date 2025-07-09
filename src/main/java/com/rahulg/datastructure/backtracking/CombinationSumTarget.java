@@ -1,4 +1,4 @@
-package com.rahulg.das.backtracking;
+package com.rahulg.datastructure.backtracking;
 
 import org.junit.jupiter.api.Test;
 

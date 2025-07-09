@@ -2,7 +2,7 @@ package com.rahulg.threading.basics;
 
 //import javax.rmi.CORBA.Util;
 
-public class MyThreadExample extends  Thread{
+public class MyThreadExample extends  Thread {
 
     public  MyThreadExample(String name) {
         super(name);

@@ -98,4 +98,94 @@ public class JavaArrayExample {
 
     }
 
+    @Test
+    public void testRotateArray() {
+        int[] arr = new int[]{1,2,3,4,5};
+        //print arr
+        reverserArray(arr, 0, arr.length -1);
+        for(int i : arr) {
+            System.out.print(i);
+        }
+    }
+
+    private void reverserArray(int[] arr, int s, int e) {
+        if (arr.length <= 1) {
+            return;
+        }
+        while(s < e) {
+            int temp = arr[s];
+            arr[s] = arr[e];
+            arr[e] = temp;
+            s++;
+            e--;
+        }
+    }
+
+    @Test
+    public void testArrayLeftRotation() {
+        int[] arr = new int[]{1,2,3,4,5,6};
+        int rotateBy = 2; // ans = {3,4,5,6,1,2}
+        reverserArray(arr, 0, rotateBy-1);
+        reverserArray(arr, rotateBy, arr.length - 1);
+        reverserArray(arr, 0, arr.length -1);
+        // print arr
+        for(int i : arr) {
+            System.out.print(i + " ");
+        }
+    }
+
+    @Test
+    public void testArrayRightRotation() {
+        int arr[] = new int[]{1,2,3,4,5,6,7};
+        int rotateBy = 3; // ans = {5,6,7,1,2,3,4}
+        reverserArray(arr, arr.length - rotateBy, arr.length -1); // reverse the last k
+        reverserArray(arr, 0, arr.length - rotateBy -1);  // revers the rest
+        reverserArray(arr, 0 , arr.length -1);
+        // print arr
+        for(int i : arr) {
+            System.out.print(i + " ");
+        }
+    }
+
+    @Test
+    public void testFindSecondLargest() {
+        Integer[] arr = new Integer[]{50,34,52,1,0,51};
+        System.out.println("arr = " + arr);
+        for(int i = 0; i < 2; i++) {
+            int largest = 0;
+            for(int j=1; j < arr.length - i; j++) {
+                if(arr[j] > arr[largest]) {
+                    largest = j;
+                }
+            }
+            // swap
+            int temp = arr[largest];
+            arr[largest] = arr[arr.length - i - 1];
+            arr[arr.length - i - 1] = temp;
+        }
+        // print the 2nd largest
+        System.out.println("2nd largest = " + arr[arr.length - 2]);
+    }
+    
+    @Test
+    public void testMoveAllZerotoEnd() {
+        int [] arr = new int[]{1,2,0,0,4,3,0,6};
+        int zeroIndex = 0;
+        for(int i = 0; i< arr.length; i++) {
+            if (arr[i] == 0) {
+                // no op
+            } else { // swap the current non-zero element with the last zeroth index
+                int temp = arr[i];
+                arr[i] = arr[zeroIndex];
+                arr[zeroIndex] = temp;
+                zeroIndex++;
+            }
+        }
+        System.out.println("Updated array = " + arr);
+        // print arr
+        
+        Arrays.stream(arr)
+            .forEach(System.out::print);
+    }
+
 }

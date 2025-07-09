@@ -6,9 +6,11 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * In this we will look at how the single threaded excutor behaves with different scenarios.
@@ -41,6 +43,7 @@ public class SingleThreadedExecutorExample {
     //https://stackoverflow.com/questions/2248131/handling-exceptions-from-java-executorservice-tasks
     @Test
     public void test_Callable_with_exception() throws Exception {
+
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         Callable<Integer> myCallable1 = getMyCallableTask(2000, "task1", 12345);
         Callable<Integer> myCallable2 = getMyCallableTask(3000, "task2", 123);

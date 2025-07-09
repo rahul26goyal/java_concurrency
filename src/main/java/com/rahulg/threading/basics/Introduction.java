@@ -7,13 +7,13 @@ public class Introduction {
 
     public static  void main(String[] args) throws InterruptedException {
         System.out.println("Introduction to Concurrency in Java..");
-        //printMainThreadDetails();
-        //executeThreadExample();
+        printMainThreadDetails();
+        executeThreadExample();
         //executeRunnableExample();
         //executeThreadInterrupt();
         //executeJoinThread();
         //executeNonSynchronizedThreds();
-        executeSynchronizedThreds();
+        //executeSynchronizedThreds();
         //executeSynchronizedDataThreds();
 
     }
@@ -74,24 +74,29 @@ public class Introduction {
     }
 
     public static void printMainThreadDetails() {
+        System.out.println("\nPrintMainThreadDetails:::**********");
         Thread main =  Thread.currentThread();
         long mainThreadId = main.getId();
         String mainThreadName = main.getName();
         int mainThreadPriority = main.getPriority();
         Thread.State currState = main.getState();
         String mainThreadGroupName = main.getThreadGroup().getName();
-        System.out.println("mainThreadId: "+mainThreadId+"\nmainThreadId: "+mainThreadName+"\nmainThreadPriority:"+mainThreadPriority
+        System.out.println("mainThreadId: "+mainThreadId+"\nmainThreadName: "+mainThreadName+"\nmainThreadPriority:"+mainThreadPriority
                 + "\ncurrState: "+currState+"\nmainThreadGroupName="+mainThreadGroupName + "\n");
     }
 
-    public static void executeThreadExample() {
+    public static void executeThreadExample() throws InterruptedException {
         MyThreadExample myThread = new MyThreadExample("Example1");
         myThread.start();
+        myThread.join(); // blocking call / waits for the thread to complete
+        System.out.println("Done with Thread Example..");
     }
 
-    public static void executeRunnableExample() {
+    public static void executeRunnableExample() throws InterruptedException {
         Thread runnableThread = new Thread(new MyRunnableExample(), "MyRunnableExample");
         runnableThread.start();
+        runnableThread.join(); // waits for the thread to complete
+        System.out.println("Done with Runnable Example..");
     }
 
     public static void executeThreadInterrupt() throws InterruptedException {
